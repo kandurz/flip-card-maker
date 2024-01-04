@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="coloris.min.css">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script type="text/javascript" src="coloris.min.js"></script>
+
+
+  <div class="rounded-div">
+    <form action="">
+      <h1 style="margin-bottom: 0.5em;">Card Flip Generator</h1>
+
+      <script>
+        Coloris({
+          el: '.coloris',
+
+        });
+
+        Coloris.setInstance('.coloris', {
+          theme: 'polaroid',
+          themeMode: 'light',
+          alpha: false,
+          margin: 15,
+          swatches: ['#067bc2',
+            '#84bcda',
+            '#80e377',
+            '#ecc30b',
+            '#f37748',
+            '#d56062',
+          ],
+          formatToggle: true,
+        });
+      </script>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <div class="picker">
+              <p>Front Background Color</p>
+              <input type="text" style="text-align: left;" class="coloris bg-front" value="orange">
+            </div>
+          </div>
+          <div class="col">
+            <div class="picker">
+              <p>Back Background Color</p>
+
+              <input type="text" style="text-align: left;" class="coloris bg-back" value="skyblue">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col">
+            <div class="picker">
+              <p>Front Text Color</p>
+
+              <input type="text" style="text-align: left;" class="coloris bg-front-text" value="#000000">
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="picker">
+              <p>Back Text Color</p>
+
+              <input type="text" style="text-align: left;" class="coloris bg-back-text" value="#000000">
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+      <p></p>
+      <hr style="margin-bottom: 10px; margin-top: 7px;">
+
+      <div class="row">
+        <p style="font-size: 1.7em;">Flip Timing</p>
+      </div>
+      <div class="row">
+        <div class="col-md-auto starts">
+          0.1s
+        </div>
+        <div class="col">
+          <div class="range" data-mdb-range-init>
+            <input type="range" class="form-range" min="0.1" max="2.0" step="0.1" id="" value="0.6" />
+          </div>
+        </div>
+        <div class="col-md-auto ends">
+          2s
+        </div>
+      </div>
+      <hr style="margin-bottom: 10px; margin-top: 7px;">
+      <div class="row">
+        <p style="font-size: 1.7em; margin-bottom: 5px; text-align: left; width: 100%; padding-left: 15px;">Front</p>
+      </div>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="fronttitle" placeholder="" value="Front Title">
+        <label for="fronttitle">Front Title</label>
+
+      </div>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="fronttext" placeholder="" value="Front Text">
+        <label for="fronttext">Front Text</label>
+
+      </div>
+
+      <hr style="margin-bottom: 5px; margin-top: 10px;">
+      <div class="row">
+        <p style="font-size: 1.7em; margin-bottom: 5px; text-align: left; width: 100%; padding-left: 15px;">Back</p>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="backtitle" placeholder="" value="Back Title">
+        <label for="backtitle">Back Title</label>
+
+      </div>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="backtext" placeholder="" value="Back Text">
+        <label for="backtext">Back Text</label>
+
+      </div>
+      <hr style="margin-bottom: 5px; margin-top: 10px;">
+      <div class="row">
+        <p style="font-size: 1.7em; margin-bottom: 5px; text-align: left; width: 100%; padding-left: 15px;">Font Size
+        </p>
+      </div>
+
+      <div class="row fs" style="width: 100%; margin: auto;">
+        <div class="col">
+          <div class="form-outline" data-mdb-input-init>
+            <input type="number" style="background-color: white;" id="ftitlefs " class="form-control number ftitlefs"
+              value="40" />
+            <label class="form-label" for="ftitlefs">Front Title</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline" data-mdb-input-init>
+            <input type="number" style="background-color: white;" id="ftextfs " class="form-control number ftextfs"
+              value="20" />
+            <label class="form-label" for="ftextfs">Front Text</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline" data-mdb-input-init>
+            <input type="number" style="background-color: white;" id="btitlefs" class="form-control number btitlefs"
+              value="40" />
+            <label class="form-label" for="btitlefs">Back Title</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline" data-mdb-input-init>
+            <input type="number" style="background-color: white;" id="btextfs" class="form-control number btextfs"
+              value="20" />
+            <label class="form-label" for="btextfs">Back Text</label>
+          </div>
+        </div>
+      </div>
+      <hr style="margin-bottom: 5px; margin-top: 10px;">
+
+      <p style="font-size: 1.7em; margin-bottom: 0px;">Extra Options</p>
+
+      <div class="row">
+        <div class="col" style="display: flex;align-items: center; justify-content: center;">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="click" id="hover" checked="checked" />
+            <label class="form-check-label" for="hover">Hover</label>
+          </div>
+          <div style="height: 1em; outline: 1px solid gray; margin: 10px;"></div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="click" id="click" />
+            <label class="form-check-label" for="click">Click</label>
+          </div>
+          <div style="height: 1em; outline: 1px solid gray; margin: 10px;"></div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="click" id="hold" />
+            <label class="form-check-label" for="hold">Hold</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="display: flex;align-items: center; justify-content: center;">
+            <div class="align">
+            <button class="" id="left"><span class="material-symbols-outlined">
+                format_align_left
+              </span></button>
+            <button class="selected" id="center"><span class="material-symbols-outlined">
+                format_align_center
+              </span></button>
+            <button class="" id="right"><span class="material-symbols-outlined">
+                format_align_right
+              </span></button>
+            </div>
+            <div style="height: 1em; outline: 1px solid gray; margin: 10px;"></div>
+            <div class="vertical-align">
+            <button class="selected" id="right"><span class="material-symbols-outlined">
+                vertical_align_top
+              </span></button>
+            <button class="" id="center"><span class="material-symbols-outlined">
+                vertical_align_center
+              </span></button>
+            <button class="" id="end"><span class="material-symbols-outlined">
+                vertical_align_bottom
+              </span></button>
+            </div>
+          </div>
+        </div>
+        
+
+        <hr style="margin-bottom: 10px; margin-top: 5px;">
+
+
+    </form>
+  </div>
+  <script>
+    function copied() {
+    width = $('.prev').width() * 0.87 + 'px';
+    height = $('.prev').height() * 0.87 + 'px';
+    gen();
+    var copyText = document.getElementById("prev").innerHTML;
+    script = `<style>body{display: flex; align-items: center; justify-content: center;} .flip-card{margin: auto}</style><script>document.addEventListener('DOMContentLoaded', function () {var resizer = document.querySelector(".resizer"); var flipCard = document.querySelector(".flip-card"); var flipCardInner = document.querySelector(".flip-card-inner"); var flipCardFront = document.querySelector(".flip-card-front"); var flipCardBack = document.querySelector(".flip-card-back"); ${$('#click').is(':checked') ? ` flipCardFront.addEventListener("click", function() { flipCardInner.style.transform = "rotateY(180deg)"; }); flipCardBack.addEventListener("click", function() { flipCardInner.style.transform = "rotateY(0deg)"; });`: ''} function resizeFlipCard() { var flipCard = document.querySelector(".flip-card"); flipCard.style.overflow = "hidden"; flipCard.style.resize = "both"; } function unSize() { var flipCard = document.querySelector(".flip-card"); flipCard.style.overflow = "visible"; flipCard.style.resize = "none"; }})<\/script>`;
+    copyText = script + copyText;
+    iframe = `<iframe style="width: ${$('.prev').width() * 1.00 + 'px'}; height: ${($('.prev').height() + 20) + 'px'}; border: none; overflow: visible;"  src="data:text/html;base64,${btoa(copyText)}"></iframe>`;
+    navigator.clipboard.writeText(iframe);
+    
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+
+  </script>
+  <div id="snackbar">✔ Copied</div>
+
+  <button class="btn btn-success" data-mdb-ripple-init data-mdb-ripple-color="light" onclick="copied()">
+    <h2>
+      <span class="material-symbols-outlined">
+        content_copy
+      </span>
+      Copy Embed Code
+    </h2>
+  </button>
+  <div class="prev-cont">
+  <div class="prev" id="prev">
+  </div>
+</div>
+<script>
+
+</script>
+
+  <script>
+      var va = 'right';
+      var al = 'center';
+      var width = '87%';
+      var height = '87%';
+    document.addEventListener('DOMContentLoaded', function () {
+      function resize() {
+ width='87%';
+ height='87%';
+ gen();
+}
+resize()
+new ResizeObserver(resize).observe(document.querySelector('.prev'))
+      gen();
+      $('form').change(function () {
+        gen();
+      });
+      $('.align button').click(function (e) {
+        e.preventDefault(); 
+        $('.align button').removeClass('selected');
+        $(this).addClass('selected');
+        al = $(this).attr('id');
+        gen();
+      })
+      $('.vertical-align button').click(function (e) {
+        e.preventDefault(); 
+        $('.vertical-align button').removeClass('selected');
+        $(this).addClass('selected');
+        va = $(this).attr('id');
+        gen();
+      })
+    });
+
+    function gen() {
+
+      $('#prev').html(`
+
+      <style>
+
+.flip-card {
+  max-height: 400px;
+  background-color: transparent;
+  width: ${width};
+  height: ${height};
+  perspective: 1000px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+.flip-card h1, .flip-card p{
+  margin: 0;
+  padding: 0;
+}
+
+.flip-card-inner {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  text-align: ${al};
+  transition: transform ${$('.form-range').val()}s;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card:active .flip-card-inner {
+  ${$('#hold').is(':checked') ? 'transform: rotateY(180deg);' : 'cursor: pointer;'}
+}
+ .flip-card:hover .flip-card-inner {
+  ${$('#hover').is(':checked') ? 'transform: rotateY(180deg);' : 'cursor: pointer;'}
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column; 
+  justify-content: ${va};
+}
+
+.flip-card-front {
+  background-color: ${$('.bg-front').val()};
+  color: ${$('.bg-front-text').val()};
+}
+.flip-card-back {
+  background-color: ${$('.bg-back').val()};
+  color: ${$('.bg-back-text').val()};
+  transform: rotateY(180deg);
+}
+
+.flip-card-front h1{
+  font-size: ${$('.ftitlefs').val()}px;
+}
+.flip-card-front p{
+  font-size: ${$('.ftextfs').val()}px;
+}
+.flip-card-back h1{
+  font-size: ${$('.btitlefs').val()}px;
+}
+.flip-card-back p{
+  font-size: ${$('.btextfs').val()}px;
+}
+
+</style>
+<script>
+    var resizer = document.querySelector(".resizer");
+    var flipCard = document.querySelector(".flip-card");
+    var flipCardInner = document.querySelector(".flip-card-inner");
+    var flipCardFront = document.querySelector(".flip-card-front");
+    var flipCardBack = document.querySelector(".flip-card-back");
+    ${$('#click').is(':checked') ? `
+    flipCardFront.addEventListener("click", function() {
+      flipCardInner.style.transform = "rotateY(180deg)";
+    });
+    flipCardBack.addEventListener("click", function() {
+      flipCardInner.style.transform = "rotateY(0deg)";
+    });`: ''}
+    function resizeFlipCard() {
+    var flipCard = document.querySelector(".flip-card");
+    flipCard.style.overflow = "hidden";
+    flipCard.style.resize = "both";
+    }
+    function unSize() {
+    var flipCard = document.querySelector(".flip-card");
+    flipCard.style.overflow = "visible";
+    flipCard.style.resize = "none";
+    }
+
+  <\/script>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h1>${$('#fronttitle').val()}</h1>
+      <p>${$('#fronttext').val()}</p>
+      </div>
+    <div class="flip-card-back">
+      <h1>${$('#backtitle').val()}</h1>
+      <p>${$('#backtext').val()}</p>
+    </div>
+  </div>
+</div>
+      `)
+
+    }
+
+  </script>
+  Drag corner to resize card
+  <br>
+  Made by Vatsal ;)
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+  
+</body>
+
+</html>
