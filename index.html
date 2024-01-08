@@ -108,7 +108,13 @@
       </div>
       <hr style="margin-bottom: 10px; margin-top: 7px;">
       <div class="row">
-        <p style="font-size: 1.7em; margin-bottom: 5px; text-align: left; width: 100%; padding-left: 15px;">Front</p>
+        <p style="font-size: 1.7em; margin-bottom: 5px; text-align: left; width: 100%; padding-left: 15px;">Front
+          <button class="" id="img-front" >
+            <span class="material-symbols-outlined">
+            add_photo_alternate
+          </span></button>
+          
+        </p>
       </div>
 
       <div class="form-floating">
@@ -125,7 +131,11 @@
 
       <hr style="margin-bottom: 5px; margin-top: 10px;">
       <div class="row">
-        <p style="font-size: 1.7em; margin-bottom: 5px; text-align: left; width: 100%; padding-left: 15px;">Back</p>
+        <p style="font-size: 1.7em; margin-bottom: 5px; text-align: left; width: 100%; padding-left: 15px;">Back
+          <button class="" id="img-back">
+            <span class="material-symbols-outlined">
+            add_photo_alternate
+          </span></button></p>
       </div>
       <div class="form-floating">
         <input type="text" class="form-control" id="backtitle" placeholder="" value="Back Title">
@@ -223,6 +233,7 @@
           </div>
         </div>
         
+        
 
         <hr style="margin-bottom: 10px; margin-top: 5px;">
 
@@ -230,6 +241,16 @@
     </form>
   </div>
   <script>
+   $(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      gen();
+      return false;
+    }
+  });
+});
+
     function copied() {
     width = $('.prev').width() * 0.87 + 'px';
     height = $('.prev').height() * 0.87 + 'px';
@@ -251,7 +272,7 @@
 
   <button class="btn btn-success" data-mdb-ripple-init data-mdb-ripple-color="light" onclick="copied()">
     <h2>
-      <span class="material-symbols-outlined">
+      <span class="material-symbols-outlined" style="color: white; font-size:1em;">
         content_copy
       </span>
       Copy Embed Code
@@ -296,6 +317,25 @@ new ResizeObserver(resize).observe(document.querySelector('.prev'))
         va = $(this).attr('id');
         gen();
       })
+      $('#img-front').click(function (e) {
+        e.preventDefault(); 
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.onchange = function(e) {
+          const file = e.target.files[0];
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            var dataUrl = e.target.result;
+            $('#fronttext').val(`<img src="${dataUrl}" style="width: 90%">`);
+            gen();
+          }
+          reader.readAsDataURL(file);
+        }
+        input.click();
+        gen();
+      });
+      
     });
 
     function gen() {

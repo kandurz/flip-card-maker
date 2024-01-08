@@ -141,18 +141,18 @@ input{
   resize: both;
   max-height: 400px;
 }
-.col button span{
+span{
   color: gray;
 }
-.col button{
+.col button, p button{
   padding: 0.1em;
   border: none;
   background-color: transparent;
-  height: 1.7em;
+  height: 1.6em;
   border-radius: 5px !important;
   box-shadow: none !important;
 }
-button:hover{
+button:hover, p button:hover{
   background-color: #00000022 !important;
 }
 .selected{
